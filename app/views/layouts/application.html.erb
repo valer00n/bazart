@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bazartorg</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">  
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="row">
+    <div class="logo">
+      <%= image_tag 'logo-bazart260.png'%>
+    </div>
+    <nav class="gray-nav">
+     <a>художники</a> <span class="orange-spacer"></span> 
+     <a>новости</a> <span class="orange-spacer"></span> 
+     <a>о нас</a> <span class="orange-spacer"></span> 
+     <a>посмотреть</a> <span class="orange-spacer"></span> 
+     <a>купить</a> <span class="orange-spacer"></span> 
+     <a>контакты</a>
+    </nav>
+    </div>
+  </header>
+  
+  <section id="body">
+
+  <% defined? alert do %>
+  <div class="alert alert-error">
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
+      <strong>Ошибка!</strong><%= alert %>
+  </div>
+  <% end %>
+
+  <% defined? notice do %>
+  <div class="alert alert-info">
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
+    <strong>Информация.</strong><%= notice %>
+  </div>
+  <% end %>
+
+  <%= yield %>
+  </section>
+
+  <footer class="navbar-bottom">
+
+  	<nav class="gray-nav">
+     <a>художники</a> <span class="spacer"></span> 
+     <a>новости</a> <span class="spacer"></span> 
+     <a>о нас</a> <span class="spacer"></span> 
+     <a>акции</a> <span class="spacer"></span> 
+     <a>музеи</a> <span class="spacer"></span> 
+     <a>галереи</a> <span class="spacer"></span> 
+     <a>арт-товары</a> <span class="spacer"></span> 
+     <a>аукционы</a> <span class="spacer"></span> 
+     <a>контакты</a>
+    </nav>
+
+    <div class="logo">
+      <%= image_tag 'logo-bazart75.png'%>
+    </div>
+
+  </footer>
+</div>
+</body>
+</html>
