@@ -42,7 +42,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise'
-gem 'cancancan'
+gem 'cancancan', '~> 1.9'
 
 gem 'omniauth'
 # gem 'omniauth-twitter'

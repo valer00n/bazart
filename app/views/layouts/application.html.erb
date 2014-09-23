@@ -17,12 +17,18 @@
       <%= image_tag 'logo-bazart260.png'%>
     </div>
     <nav class="gray-nav">
-     <a>художники</a> <span class="orange-spacer"></span> 
-     <a>новости</a> <span class="orange-spacer"></span> 
-     <a>о нас</a> <span class="orange-spacer"></span> 
-     <a>посмотреть</a> <span class="orange-spacer"></span> 
-     <a>купить</a> <span class="orange-spacer"></span> 
-     <a>контакты</a>
+      <a>художники</a> <span class="orange-spacer"></span> 
+      <a>новости</a> <span class="orange-spacer"></span> 
+      <a>о нас</a> <span class="orange-spacer"></span> 
+      <a>посмотреть</a> <span class="orange-spacer"></span> 
+      <a>купить</a> <span class="orange-spacer"></span> 
+      <%= link_to 'контакты', site_contact_path%> <span class="orange-spacer"></span> 
+      <% if !user_signed_in? %>
+        <%= link_to 'войти', user_session_path%>
+      <% else %>
+        <%= link_to 'выйти', destroy_user_session_path, :method => :delete %>
+      <% end %>
+
     </nav>
     </div>
   </header>
@@ -57,7 +63,11 @@
      <a>галереи</a> <span class="spacer"></span> 
      <a>арт-товары</a> <span class="spacer"></span> 
      <a>аукционы</a> <span class="spacer"></span> 
-     <a>контакты</a>
+     <%= link_to 'контакты', site_contact_path%> 
+      <% if !user_signed_in? %>
+        <span class="spacer"></span><%= link_to 'войти', user_session_path%>
+      <% end %>
+
     </nav>
 
     <div class="logo">
