@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
+  resources :artists
+
+  resources :topics
+
+  get 'news' => 'topics#index'
+  get 'news/:alias' => 'topics#show'
+
   devise_for :users
-  get 'site/index'
 
-  get 'site/about'
-
-  get 'site/contact'
+  get 'index' => 'site#index'
+  get 'about' => 'site#about'
+  get 'contact' => 'site#contact'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

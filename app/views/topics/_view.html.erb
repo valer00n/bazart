@@ -1,0 +1,18 @@
+<li class="topic-wrap media">
+    <%= link_to (holder_tag '64x64', 'Пикча', 'lava', :class => 'img-thumbnail media-object'), topic, :class => 'pull-right' %>
+
+  <div class="media-body">
+    <h4 class="media-heading"><%= link_to (topic.title), topic %>    </h4>
+
+    <span class="dropdown">
+      <a  role="button" data-toggle="dropdown" href="#">Меню</a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        <li><%= link_to 'Edit', edit_topic_path(topic) %></li>
+        <li><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></li>    
+      </ul>
+    </span>
+
+    <p><%= topic.teaser %></p>
+
+  </div>          
+</li>     

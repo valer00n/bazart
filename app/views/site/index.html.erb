@@ -1,20 +1,6 @@
 <div class="row">
   <div class="col-md-2">
-    <h3>Художники</h3>
-    <ul class="nav">
-      <li><a href="">Олег Булавин</a></li>
-      <li><a href="">Иван Крамской</a></li>
-      <li><a href="">Иван Айвазовский</a></li>
-      <li><a href="">Борис Айнштенберг</a></li>
-      <li><a href="">Сергей Расковалов</a></li>
-      <li><a href="">Семён Ляшенков</a></li>
-      <li><a href="">Олег Булавин</a></li>
-      <li><a href="">Иван Крамской</a></li>
-      <li><a href="">Иван Айвазовский</a></li>
-      <li><a href="">Борис Айнштенберг</a></li>
-      <li><a href="">Сергей Расковалов</a></li>
-      <li><a href="">Семён Ляшенков</a></li>      
-    </ul>
+    <%= render 'layouts/artists' %>
   </div>
   <div class="col-md-8">
     <div class="row">
@@ -101,13 +87,6 @@
     </div>
   </div>
   <div class="col-md-2">
-    <div class="ad-wrap">
-      <%= holder_tag '200x300', 'Advert 1', 'vine' %>
-    </div>
-
-    <div class="ad-wrap">
-      <%= holder_tag '200x300', 'Advert 2', 'vine' %>
-    </div>
-
+    <%= render 'layouts/advert'%>
   </div>
 </div>

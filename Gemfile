@@ -10,6 +10,8 @@ gem 'bootstrap-sass', '~> 3.2.0'
 
 gem 'holder_rails'
 
+gem 'russian', '~> 0.6.0'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -50,3 +52,8 @@ gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
 
 gem 'mongoid', '~> 4.0.0'
+
+gem "mongoid-paperclip", :require => "mongoid_paperclip"
+gem 'aws-sdk', '~> 1.3.4'
+
+# gem 'will_paginate', '~> 3.0'

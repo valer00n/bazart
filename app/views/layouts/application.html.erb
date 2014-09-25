@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bazartorg</title>
+  <title><%= content_for?(:title) ? yield(:title) : "Базарт" %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">  
   <meta name="viewport" content="width=device-width, initial-scale=1">  
@@ -14,15 +13,21 @@
   <header>
     <div class="row">
     <div class="logo">
-      <%= image_tag 'logo-bazart260.png'%>
+      <%= link_to (image_tag 'logo-bazart260.png'), root_path %>
     </div>
     <nav class="gray-nav">
-      <a>художники</a> <span class="orange-spacer"></span> 
-      <a>новости</a> <span class="orange-spacer"></span> 
-      <a>о нас</a> <span class="orange-spacer"></span> 
-      <a>посмотреть</a> <span class="orange-spacer"></span> 
-      <a>купить</a> <span class="orange-spacer"></span> 
-      <%= link_to 'контакты', site_contact_path%> <span class="orange-spacer"></span> 
+      <%= link_to 'художники', artists_path%> 
+      <span class="orange-spacer"></span> 
+      <%= link_to 'новости', news_path%> 
+      <span class="orange-spacer"></span> 
+      <%= link_to 'о нас', about_path%> 
+      <span class="orange-spacer"></span> 
+      <a>посмотреть</a> 
+      <span class="orange-spacer"></span> 
+      <a>купить</a> 
+      <span class="orange-spacer"></span> 
+      <%= link_to 'контакты', contact_path%> 
+      <span class="orange-spacer"></span> 
       <% if !user_signed_in? %>
         <%= link_to 'войти', user_session_path%>
       <% else %>
@@ -55,17 +60,28 @@
   <footer class="navbar-bottom">
 
   	<nav class="gray-nav">
-     <a>художники</a> <span class="spacer"></span> 
-     <a>новости</a> <span class="spacer"></span> 
-     <a>о нас</a> <span class="spacer"></span> 
-     <a>акции</a> <span class="spacer"></span> 
-     <a>музеи</a> <span class="spacer"></span> 
-     <a>галереи</a> <span class="spacer"></span> 
-     <a>арт-товары</a> <span class="spacer"></span> 
-     <a>аукционы</a> <span class="spacer"></span> 
-     <%= link_to 'контакты', site_contact_path%> 
+      <%= link_to 'художники', artists_path%> 
+      <span class="spacer"></span> 
+      <%= link_to 'новости', news_path%> 
+      <span class="spacer"></span> 
+      <%= link_to 'о нас', about_path%> 
+      <span class="spacer"></span> 
+      <a>акции</a> 
+      <span class="spacer"></span> 
+      <a>музеи</a> 
+      <span class="spacer"></span> 
+      <a>галереи</a> 
+      <span class="spacer"></span> 
+      <a>арт-товары</a> 
+      <span class="spacer"></span> 
+      <a>аукционы</a> 
+      <span class="spacer"></span> 
+      <%= link_to 'контакты', contact_path%> 
+      <span class="spacer"></span>
       <% if !user_signed_in? %>
-        <span class="spacer"></span><%= link_to 'войти', user_session_path%>
+        <%= link_to 'войти', user_session_path%>
+      <% else %>
+        <%= link_to 'выйти', destroy_user_session_path, :method => :delete %>
       <% end %>
 
     </nav>
@@ -76,5 +92,6 @@
 
   </footer>
 </div>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

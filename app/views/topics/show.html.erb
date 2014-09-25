@@ -1,0 +1,47 @@
+<div class="row">
+
+<div class="col-md-2">
+  <%= render 'layouts/artists' %>
+</div>
+
+<div class="col-md-8">
+<p id="notice"><%= notice %></p>
+
+<h2><%= @topic.title %></h2>
+
+<div class="topic-date-author">
+<% if @topic.created_at != nil %>
+  <%= Russian::strftime(@topic.created_at, "%d %B %Y, %H:%M")%>
+<% end %>
+</div>
+
+<hr>
+
+<div class="topic-teaser">
+  <%= @topic.teaser %>
+</div>
+
+<div class="topic-image">
+  <%= holder_tag '800x600', 'Пикча', 'lava', :class => 'img-responsive'  %>
+</div>
+
+<div class="topic-content">
+  <%= @topic.content %>
+</div>
+
+    <span class="dropdown">
+      <a  role="button" data-toggle="dropdown" href="#">Меню</a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        <li><%= link_to 'Edit', edit_topic_path(@topic) %></li>
+        <li><%= link_to 'Destroy', @topic, method: :delete, data: { confirm: 'Are you sure?' } %></li>  
+      </ul>
+    </span> 
+    | <%= link_to 'Back', topics_path %>
+
+</div>
+
+<div class="col-md-2">
+  <%= render 'layouts/advert' %>
+</div>
+
+</div>
