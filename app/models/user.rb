@@ -1,5 +1,12 @@
 class User
+
+  ROLES = %i[admin moderator author artist banned]
+
   include Mongoid::Document
+
+  include Mongoid::Paperclip
+
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -23,6 +30,10 @@ class User
   field :current_sign_in_ip, type: String
   field :last_sign_in_ip,    type: String
 
+  field :roles, :type => Array, default: -> { ['user'] if new_record?}
+
+  has_mongoid_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>", :micro => "32x32>"}, :default_url => "no-avatar-:style.png"
+
   ## Confirmable
   # field :confirmation_token,   type: String
   # field :confirmed_at,         type: Time
@@ -36,8 +47,35 @@ class User
 
   embeds_many :identities
 
+  has_many :topics
+  has_many :artists
+
   def to_key
     id.to_s
+  end
+
+  def admin?
+    self.roles.include?('admin')
+  end
+
+  def moderator?
+    self.roles.include?('moderator')
+  end
+
+  def author?
+    self.roles.include?('author')
+  end
+
+  def artist?
+    self.roles.include?('artist')
+  end
+
+  def user?
+    self.roles.include?('user')
+  end
+
+  def baned?
+    self.roles.include?('baned')
   end
 
 end

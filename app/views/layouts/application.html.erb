@@ -3,6 +3,7 @@
 <head>
   <title><%= content_for?(:title) ? yield(:title) : "Базарт" %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">  
   <meta name="viewport" content="width=device-width, initial-scale=1">  
@@ -24,14 +25,23 @@
       <span class="orange-spacer"></span> 
       <a>посмотреть</a> 
       <span class="orange-spacer"></span> 
-      <a>купить</a> 
+      <%= link_to 'купить', shop_path%> 
       <span class="orange-spacer"></span> 
       <%= link_to 'контакты', contact_path%> 
       <span class="orange-spacer"></span> 
       <% if !user_signed_in? %>
         <%= link_to 'войти', user_session_path%>
       <% else %>
-        <%= link_to 'выйти', destroy_user_session_path, :method => :delete %>
+      <span class="dropdown">
+        <a  role="button" data-toggle="dropdown" href="#">пользователь</a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+          <li><%= link_to 'профиль', edit_user_registration_path %></li>
+          <li><%= link_to 'корзина',  shop_cart_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to 'выйти', destroy_user_session_path, method: :delete, data: { confirm: 'Уверены?' } %></li>    
+        </ul>
+      </span>
+        
       <% end %>
 
     </nav>
@@ -92,6 +102,6 @@
 
   </footer>
 </div>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
 </body>
 </html>

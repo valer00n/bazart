@@ -56,4 +56,6 @@ gem 'mongoid', '~> 4.0.0'
 gem "mongoid-paperclip", :require => "mongoid_paperclip"
 gem 'aws-sdk', '~> 1.3.4'
 
-# gem 'will_paginate', '~> 3.0'
+gem 'will_paginate', '~> 3.0'
+
+gem 'mercury-rails'

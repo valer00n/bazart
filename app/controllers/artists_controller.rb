@@ -1,5 +1,7 @@
 class ArtistsController < ApplicationController
-  before_action :set_artist, only: [:show, :edit, :update, :destroy]
+  # before_action :set_artist, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
+  skip_authorize_resource :only => :new
 
   # GET /artists
   # GET /artists.json
@@ -13,8 +15,8 @@ class ArtistsController < ApplicationController
   end
 
   # GET /artists/new
-  def new
-    @artist = Artist.new
+  def new    
+    # @artist = Artist.new
   end
 
   # GET /artists/1/edit
@@ -24,8 +26,8 @@ class ArtistsController < ApplicationController
   # POST /artists
   # POST /artists.json
   def create
-    @artist = Artist.new(artist_params)
-
+    # @artist = Artist.new(artist_params)
+    @artist.user = current_user
     respond_to do |format|
       if @artist.save
         format.html { redirect_to @artist, notice: 'Artist was successfully created.' }
@@ -54,7 +56,7 @@ class ArtistsController < ApplicationController
   # DELETE /artists/1
   # DELETE /artists/1.json
   def destroy
-    @artist.destroy
+    # @artist.destroy
     respond_to do |format|
       format.html { redirect_to artists_url, notice: 'Artist was successfully destroyed.' }
       format.json { head :no_content }

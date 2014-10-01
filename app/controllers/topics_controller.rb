@@ -1,5 +1,7 @@
 class TopicsController < ApplicationController
-  before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  # before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
+  skip_authorize_resource :only => :new
 
   # GET /topics
   # GET /topics.json
@@ -14,7 +16,7 @@ class TopicsController < ApplicationController
 
   # GET /topics/new
   def new
-    @topic = Topic.new
+    # @topic = Topic.new
   end
 
   # GET /topics/1/edit
@@ -24,7 +26,8 @@ class TopicsController < ApplicationController
   # POST /topics
   # POST /topics.json
   def create
-    @topic = Topic.new(topic_params)
+    # @topic = Topic.new(topic_params)
+    @topic.user = current_user
 
     respond_to do |format|
       if @topic.save

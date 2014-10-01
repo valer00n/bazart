@@ -1,12 +1,23 @@
 Rails.application.routes.draw do
+  
+  Mercury::Engine.routes
+  get 'admin/index'
+
+  get 'admin/statistics'
+
+  get 'shop' => 'shop#index'
+  get 'shop/cart'
+  get 'shop/show'
+  get 'shop/admin'
+
   resources :artists
 
   resources :topics
-
   get 'news' => 'topics#index'
   get 'news/:alias' => 'topics#show'
 
   devise_for :users
+  get 'user' => 'site#user'
 
   get 'index' => 'site#index'
   get 'about' => 'site#about'
