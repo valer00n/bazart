@@ -1,29 +1,45 @@
+<div class="row">
+
+<div class="col-md-2">
+  <%= render 'layouts/artists' %>
+</div>
+
+<div class="col-md-8">
+  <small><%= link_to '<span class="glyphicon glyphicon-chevron-left"></span> Назад'.html_safe, artists_path %></small>
+
+<h1><%= @artist.fullname %></h1>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Firstname:</strong>
-  <%= @artist.firstname %>
-</p>
+<div class="row">
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @artist.lastname %>
-</p>
+  <div class="col-md-4">
+    <%= image_tag @artist.avatar.url(:medium), :class => 'img-responsive'%>
+  </div>
 
-<p>
-  <strong>Alias:</strong>
-  <%= @artist.alias %>
-</p>
+  <div class="col-md-8">
+    <strong>
+    <%= @artist.teaser %>
+    </strong>
+  </div>
 
-<p>
-  <strong>Teaser:</strong>
-  <%= @artist.teaser %>
-</p>
+</div>
 
-<p>
-  <strong>Content:</strong>
+<hr>
+
+
+<div>
   <%= @artist.content %>
-</p>
+</div>
 
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>
+<% if can? :manage, @artist  %>
+<%= link_to 'Редактировать', edit_artist_path(@artist) %>
+<% end %>
+
+</div>
+
+<div class="col-md-2">
+  <%= render 'layouts/advert' %>
+</div>
+
+</div>

@@ -4,7 +4,7 @@
   <%= render 'layouts/artists' %>
 </div>
 <div class="col-md-8">
-<h1>Новости</h1>
+<h1>Новости <small class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign"></span>'.html_safe, new_topic_path %></small></h1>
 
 <ul class="media-list">
     <% @topics.each do |topic| %>
@@ -12,9 +12,6 @@
     <% end %>
 </ul>
 
-<br>
-
-<%= link_to 'Добавить новость', new_topic_path %>
 </div>
 
 <div class="col-md-2">

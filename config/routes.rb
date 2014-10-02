@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
-  Mercury::Engine.routes
+  resources :galleries
+
+  # Mercury::Engine.routes
+  
   get 'admin/index'
 
   get 'admin/statistics'

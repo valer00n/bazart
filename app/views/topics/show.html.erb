@@ -5,9 +5,12 @@
 </div>
 
 <div class="col-md-8">
-<p id="notice"><%= notice %></p>
+
+<small><%= link_to '<span class="glyphicon glyphicon-chevron-left"></span> Назад'.html_safe, topics_path %></small>
 
 <h2><%= @topic.title %></h2>
+
+<p id="notice"><%= notice %></p>
 
 <div class="topic-date-author">
 <% if @topic.created_at != nil %>
@@ -21,9 +24,14 @@
   <%= @topic.teaser %>
 </div>
 
+<hr>
+
 <div class="topic-image">
   <%= holder_tag '800x600', 'Пикча', 'lava', :class => 'img-responsive'  %>
+  <small><i>Изображение к статье #1</i></small>
 </div>
+
+<hr>
 
 <div class="topic-content">
   <%= @topic.content %>
@@ -36,7 +44,6 @@
         <li><%= link_to 'Destroy', @topic, method: :delete, data: { confirm: 'Are you sure?' } %></li>  
       </ul>
     </span> 
-    | <%= link_to 'Back', topics_path %>
 
 </div>
 

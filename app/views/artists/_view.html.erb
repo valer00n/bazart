@@ -1,16 +1,20 @@
 <li class="topic-wrap media">
-    <%= link_to (holder_tag '200x200', 'Пикча', 'lava', :class => 'img-thumbnail media-object'), artist, :class => 'pull-left' %>
+<!--     <%= link_to (holder_tag '200x200', 'Пикча', 'lava', :class => 'img-thumbnail media-object'), artist, :class => 'pull-left' %> -->
+
+<%= link_to (image_tag artist.avatar.url(:thumb), :class => 'img-thumbnail media-object'), artist, :class => 'pull-left' %>
 
   <div class="media-body">
-    <h4 class="media-heading"><%= link_to (artist.fullname), artist %>    </h4>
+    <h4 class="media-heading"><%= link_to (artist.fullname), artist %>   
 
-    <span class="dropdown">
-      <a  role="button" data-toggle="dropdown" href="#">Меню</a>
+    <small class="dropdown pull-right">
+      <a  role="button" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-chevron-down"></span></a>
       <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
         <li><%= link_to 'Edit', edit_artist_path(artist) %></li>
         <li><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></li>    
       </ul>
-    </span>
+    </small>
+
+     </h4>
 
     <p><%= artist.teaser %></p>
 

@@ -1,0 +1,29 @@
+<div class="row">
+
+<div class="col-md-2">
+  <%= render 'layouts/artists'%>
+</div>
+
+<div class="col-md-8">
+  <h1>Галлерея <small class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign"></span>'.html_safe, new_gallery_path %></small></h1>
+
+  <div class="row">
+  <% @galleries.each do |gallery| %>
+    <div class="col-md-4">
+      <h4><%= link_to gallery.title, gallery%></h4>
+        <a href="#">
+        <%= holder_tag '200x200', gallery.title, 'lava', :class => 'img-thumbnail media-object'  %>
+        </a>
+      <p><%= gallery.teaser %></p>
+    </div>
+
+  <% end %>
+  </div>
+
+</div>
+
+<div class="col-md-2">
+  <%= render 'layouts/advert'%>
+</div>
+
+</div>

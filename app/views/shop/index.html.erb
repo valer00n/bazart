@@ -1,2 +1,20 @@
-<h1>Купить</h1>
-<p></p>
+<div class="row">
+  <div class="col-md-12">
+    <h1>Купить</h1>
+  </div>
+
+  <% 30.times do |i| %>
+    <div class="col-md-3">
+      <h2>Картина номер <%= i %> </h2>
+      <p class="right">
+        <a href="/shop/cart"><span class="glyphicon glyphicon-shopping-cart">Купить</span></a>
+      </p>
+      <%= holder_tag '300x300', 'Товар ' + i.to_s, 'sky', :class => 'img-responsive' %>
+
+      <p><strong>Lorem ipsum dolor sit amet</strong>, consectetur adipisicing elit. Enim facilis velit laboriosam maxime libero earum laudantium laborum consequuntur vitae, quibusdam ab adipisci rem. Quae tempora soluta autem quo modi consequatur.</p>
+
+      <hr>
+
+    </div>
+  <% end %>
+</div>

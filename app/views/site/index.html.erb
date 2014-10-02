@@ -7,31 +7,31 @@
       <!-- TODO: Сделать динамический -->
       <div class="col-md-4">
         <div class="pic-wrap">
-          <%= holder_tag '235x160', 'Картина 1', '', :class => 'img-responsive' %>
+          <%= holder_tag '235x160', 'Картина 1', 'lava', :class => 'img-responsive' %>
         </div>
       </div>
       <div class="col-md-4">
         <div class="pic-wrap">
-          <%= holder_tag '235x160', 'Картина 2', '', :class => 'img-responsive'  %>
+          <%= holder_tag '235x160', 'Картина 2', 'lava', :class => 'img-responsive'  %>
         </div>
       </div>
       <div class="col-md-4">
         <div class="pic-wrap">
-          <%= holder_tag '235x160', 'Картина 3', '', :class => 'img-responsive'  %>
+          <%= holder_tag '235x160', 'Картина 3', 'lava', :class => 'img-responsive'  %>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="pic-wrap">
-          <%= holder_tag '235x160', 'Картина 4', '', :class => 'img-responsive'  %>
+          <%= holder_tag '235x160', 'Картина 4', 'lava', :class => 'img-responsive'  %>
         </div>
-        <div class="pic-wrap">
-          <%= holder_tag '235x160', 'Картина 5', '', :class => 'img-responsive'  %>
+        <div class="pic-wrap pic-wrap-last-child">
+          <%= holder_tag '235x160', 'Картина 5', 'lava', :class => 'img-responsive'  %>
         </div>
       </div>
       <div class="col-md-8">
         <div class="pic-wrap">
-          <%= holder_tag '500x348', 'Слайдер', '', :class => 'img-responsive'  %>
+          <%= render 'galleries/carousel' %>
         </div>
       </div>
 

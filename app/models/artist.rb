@@ -10,7 +10,7 @@ class Artist
   field :teaser, type: String
   field :content, type: String
 
-  has_mongoid_attached_file :avatar
+  has_mongoid_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>", :micro => "32x32>"}, :default_url => "no-avatar-:style.png"
 
   belongs_to :user
 
