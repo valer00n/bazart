@@ -1,7 +1,9 @@
-<h3>Художники</h3>
-<ul class="nav">
-  <% artists = top_artists(10) %> 
-  <% artists.each do |artist| %>
-    <li> <%= link_to artist.fullname, artist %></li>
-  <% end %>    
-</ul>
+<div class="hidden-sm hidden-xs">
+  <h3>Художники</h3>
+  <ul class="nav">
+    <% artists = top_artists(10) %> 
+    <% artists.each do |artist| %>
+      <li> <%= link_to artist.fullname, artist %></li>
+    <% end %>    
+  </ul>  
+</div>

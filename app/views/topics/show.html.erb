@@ -10,7 +10,7 @@
 
 <h2><%= @topic.title %></h2>
 
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
 <div class="topic-date-author">
 <% if @topic.created_at != nil %>
@@ -24,14 +24,12 @@
   <%= @topic.teaser %>
 </div>
 
-<hr>
 
 <div class="topic-image">
   <%= holder_tag '800x600', 'Пикча', 'lava', :class => 'img-responsive'  %>
   <small><i>Изображение к статье #1</i></small>
 </div>
 
-<hr>
 
 <div class="topic-content">
   <%= @topic.content %>

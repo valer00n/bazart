@@ -1,28 +1,16 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
+
+<h1><%= @gallery.title %></h1>
 
 <p>
-  <strong>Title:</strong>
-  <%= @gallery.title %>
-</p>
-
-<p>
-  <strong>Teaser:</strong>
   <%= @gallery.teaser %>
 </p>
+
+<%= render 'galleries/carousel' %>
 
 <p>
   <strong>Description:</strong>
   <%= @gallery.description %>
-</p>
-
-<p>
-  <strong>Alias:</strong>
-  <%= @gallery.alias %>
-</p>
-
-<p>
-  <strong>Link:</strong>
-  <%= @gallery.link %>
 </p>
 
 <%= link_to 'Edit', edit_gallery_path(@gallery) %> |
