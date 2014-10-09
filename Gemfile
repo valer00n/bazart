@@ -58,4 +58,10 @@ gem 'aws-sdk', '~> 1.3.4'
 
 gem 'will_paginate', '~> 3.0'
 
-gem 'mercury-rails'
+# gem 'mercury-rails'
+
+# gem 'bootsy-mongoid'
+# gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+# gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
+
+gem 'bootstrap-wysihtml5-rails'

@@ -15,3 +15,10 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require holder
+//= require bootstrap-wysihtml5
+//= require bootstrap-wysihtml5/locales
+
+
+$(document).on('page:load', function(){
+  window['rangy'].initialized = false
+});

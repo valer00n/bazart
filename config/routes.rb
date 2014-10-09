@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   # Mercury::Engine.routes
   
   get 'admin/index'
-
   get 'admin/statistics'
+
 
   get 'shop' => 'shop#index'
   get 'shop/cart'
