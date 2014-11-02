@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= content_for?(:title) ? yield(:title) : "Базарт" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "базАРТ" %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">  
   <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <%= favicon_link_tag 'favicon.ico' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -19,13 +20,32 @@
     <nav class="gray-nav">
       <%= link_to 'художники', artists_path%> 
       <span class="orange-spacer"></span> 
-      <%= link_to 'новости', news_path%> 
+      <span class="dropdown">
+        <a  role="button" data-toggle="dropdown" href="#">новости</a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+          <li><%= link_to 'новости', news_path%></li>
+          <li><%= link_to 'статьи', news_path%></li>
+        </ul>
+      </span>
       <span class="orange-spacer"></span> 
-      <%= link_to 'о нас', about_path%> 
+      <span class="dropdown">
+        <a  role="button" data-toggle="dropdown" href="#">о нас</a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+          <li><%= link_to 'о нас', about_path%></li>
+          <li><%= link_to 'акции', about_path%></li>
+        </ul>
+      </span>      
       <span class="orange-spacer"></span> 
       <%= link_to 'посмотреть', galleries_path%>
       <span class="orange-spacer"></span> 
-      <%= link_to 'купить', shop_path%> 
+      <span class="dropdown">
+        <a  role="button" data-toggle="dropdown" href="#">купить</a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+          <li><%= link_to 'галереи', shop_path%></li>
+          <li><%= link_to 'аукционы', shop_path%></li>
+          <li><%= link_to 'арт-товары', shop_path%></li>
+        </ul>
+      </span>       
       <span class="orange-spacer"></span> 
       <%= link_to 'контакты', contact_path%> 
       <span class="orange-spacer"></span> 

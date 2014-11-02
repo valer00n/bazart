@@ -37,11 +37,12 @@ header {
   }
 
   .orange-spacer {
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
+    width: 7px;
+    height: 7px;
+    border-radius: 3px;
     background-color: $brand-primary;
     display: inline-block;
+    margin: 0 8px;
   }
 }
 
@@ -54,15 +55,18 @@ footer {
   }
 
   .spacer {
-    width: 10px;
-    height: 10px;
+    width: 7px;
+    height: 7px;
+    border-radius: 3px;
+    // background-color: $brand-primary;
     display: inline-block;
+    margin: 0 8px;    
   }  
 }
 
 nav.gray-nav a {
   color: $body-gray;
-  font-size: 1.11em;
+  font-size: 11px;
 }
 
 .pic-wrap, .ad-wrap {
@@ -91,4 +95,16 @@ nav.gray-nav a {
 
 h3 {
   color: $brand-primary;
+}
+
+h4 {
+  font-size: 14px;
+  text-transform: lowercase;
+  color: $body-gray;
+}
+
+.nav.artists {
+  li a {
+    padding: 7px 0 7px 0;
+  }
 }

@@ -1,6 +1,6 @@
 <div class="hidden-sm hidden-xs">
-  <h3>Художники</h3>
-  <ul class="nav">
+  <h4>Художники</h4>
+  <ul class="nav artists">
     <% artists = top_artists(10) %> 
     <% artists.each do |artist| %>
       <li> <%= link_to artist.fullname, artist %></li>

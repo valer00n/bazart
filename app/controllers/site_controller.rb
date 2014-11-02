@@ -11,4 +11,8 @@ class SiteController < ApplicationController
 
   def user
   end
+
+  def actions
+    
+  end
 end

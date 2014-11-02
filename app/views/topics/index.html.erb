@@ -4,7 +4,11 @@
   <%= render 'layouts/artists' %>
 </div>
 <div class="col-md-8">
-<h1>Новости <small class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign"></span>'.html_safe, new_topic_path %></small></h1>
+<h1>Новости 
+<% if can? :create, Topic %>
+<small class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign"></span>'.html_safe, new_topic_path %></small>
+<% end %>
+</h1>
 
 <ul class="media-list">
     <% @topics.each do |topic| %>

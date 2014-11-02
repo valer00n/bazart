@@ -6,7 +6,11 @@
 
 
 <div class="col-md-8">
-  <h1>Художники <small class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign"></span>'.html_safe, new_artist_path %></small></h1>
+  <h1>Художники 
+<% if can? :create, Artist %>
+  <small class="pull-right"><%= link_to '<span class="glyphicon glyphicon-plus-sign"></span>'.html_safe, new_artist_path %></small>
+<% end %>
+  </h1>
 
   <ul class="media-list">
       <% @artists.each do |artist| %>
